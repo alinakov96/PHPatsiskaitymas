@@ -45,6 +45,51 @@
     }
     var_dump(exercise2().PHP_EOL);
 
+    function exercise3() {
 
+        $holidays = [
+            [
+                'title' => 'Romantic Paris',
+                'destination' => 'Paris',
+                'price' => 1500,
+                'tourists' => 55,
+            ],
+            [
+                'title' => 'Amazing New York',
+                'destination' => 'New York',
+                'price' => 2699,
+                'tourists' => 21,
+            ],
+            [
+                'title' => 'Spectacular Sydey',
+                'destination' => 'Sydey',
+                'price' => 4130,
+                'tourists' => 9,
+            ],
+            [
+                'title' => 'Hidden Paris',
+                'destination' => 'Paris',
+                'price' => 1700,
+                'tourists' => 10,
+            ],
+            [
+                'title' => 'Emperors of the past',
+                'destination' => 'Beijing',
+                'price' => null,
+                'tourists' => 10,
+            ],
+        ];
+
+        foreach ($holidays as $key => $value) {
+            if ($value['price'] === null) {
+                unset($key, $value);
+            } else {
+                echo "Destination: ", $value['destination'] . "\n";
+                echo "Titles: ", $value['title'] . "\n";
+                echo "Total: ", $value['price'] * $value['tourists'] . "\n";
+            }
+        }
+    }
+    var_dump(exercise3().PHP_EOL);
 
 
