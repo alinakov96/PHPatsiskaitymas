@@ -166,5 +166,16 @@
     }
     var_dump(exercise5().PHP_EOL);
 
+    function exercise6() {
 
+        $numberOne = readline('First Number: ');
+        $numberTwo = readline('Second Number: ');
+
+        if(is_numeric($numberOne) && is_numeric($numberTwo)) {
+            echo ($numberOne * $numberTwo)*($numberOne * $numberTwo);
+        } else {
+            echo "Error: invalid data entered. Please only use numbers.";
+        }
+    }
+    var_dump(exercise6().PHP_EOL);
 
