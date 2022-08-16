@@ -92,4 +92,71 @@
     }
     var_dump(exercise3().PHP_EOL);
 
+    function exercise4() {
+
+        function holidayStats()
+        {
+
+            $holidays = [
+                [
+                    'title' => 'Romantic Paris',
+                    'destination' => 'Paris',
+                    'price' => 1500,
+                    'tourists' => 55,
+                ],
+                [
+                    'title' => 'Amazing New York',
+                    'destination' => 'New York',
+                    'price' => 2699,
+                    'tourists' => 21,
+                ],
+                [
+                    'title' => 'Spectacular Sydey',
+                    'destination' => 'Sydey',
+                    'price' => 4130,
+                    'tourists' => 9,
+                ],
+                [
+                    'title' => 'Hidden Paris',
+                    'destination' => 'Paris',
+                    'price' => 1700,
+                    'tourists' => 10,
+                ],
+                [
+                    'title' => 'Emperors of the past',
+                    'destination' => 'Beijing',
+                    'price' => null,
+                    'tourists' => 10,
+                ],
+            ];
+
+            foreach ($holidays as $key => $value) {
+                if ($value['price'] === null) {
+                    unset($key, $value);
+                } else {
+                    echo $holidayStats["Destination"] = $value['destination'];
+                    echo $holidayStats["Titles"] = $value['title'];
+                    echo $holidayStats["Total"] = $value['price'] * $value['tourists'];
+                    return $holidayStats;
+                }
+            }
+        }
+
+        $holidayStatistics = holidayStats();
+
+        $fileName = './holidayStatistics.json';
+
+        $deserializationData = json_decode($fileName, true);
+        if($deserializationData === NULL) {
+            $deserializationData = [];
+        }
+
+        array_push($deserializationData, $holidayStatistics);
+
+        $serialization = json_encode($deserializationData, JSON_PRETTY_PRINT);
+
+        file_put_contents('holidayStatistics.json', $serialization);
+    }
+    var_dump(exercise4().PHP_EOL);
+
 
