@@ -159,4 +159,9 @@
     }
     var_dump(exercise4().PHP_EOL);
 
+    function exercise5() {
 
+        $fileName = './exam.json';
+        var_dump(file_get_contents($fileName));
+    }
+    var_dump(exercise5().PHP_EOL);
