@@ -178,3 +178,4 @@
         }
     }
     var_dump(exercise6().PHP_EOL);
+
